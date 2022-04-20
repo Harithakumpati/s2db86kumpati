@@ -1,0 +1,30 @@
+{
+  "name": "s2db86kumpati",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "debug": "^4.3.4",
+    "express": "^4.17.3",
+    "http-errors": "^2.0.0",
+    "mongodb": "^4.5.0",
+    "mongoose": "^6.3.0",
+    "morgan": "^1.10.0",
+    "pug": "^3.0.2"
+  },
+  "description": "Created for Assignment 11",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Harithakumpati/s2db86kumpati.git"
+  },
+  "author": "Raju Veerlapati",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Harithakumpati/s2db86kumpati/issues"
+  },
+  "homepage": "https://github.com/Harithakumpati/s2db86kumpati#readme"
+}
