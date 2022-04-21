@@ -2,14 +2,34 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}. My name is Haritha Kumpati
-  - let items = results
-  div(class="container-fluid")
-    div(class="row")
-      each houses, index in items
-        div(class="col-sm-2" onclick=`buy(${index+1})`) #{houses.house_name} - #{houses.house_color} - $#{houses.house_cost}
-  
-  script.
-    function buy(index){
-      alert(`You purchased item ${index}`);
-    }
+  - let items = results; 
+   button.btn( class="btn btn-sm btn-info ml-1", onclick= `dispatch(\"/houses/create\")` ) Create
+  table(class="table table-stripped table-bordered")
+        thead(style="background-color:lightblue;color:white") 
+            tr
+                td House ID
+                td House Name 
+                td House Color
+                td House Cost 
+                td Update
+                td Details 
+                td Delete
+        tbody
+            
+            each item in items
+                -let itemid=item._id
+                tr
+                    td #{item._id}
+                    td #{item.House_name}
+                    td #{item.House_color}
+                    td #{item.House_cost}
+                    td 
+                      button.btn( class="btn btn-sm btn-info ml-1", onclick= `dispatch(\"/houses/update/?id=${item._id}\")` ) Update 
+                    td 
+                      button.btn( class="btn btn-sm btn-info ml-1", onclick= `dispatch(\"/houses/detail/?id=${item._id}\")` ) Detail 
+                    td 
+                      button.btn( class="btn btn-sm btn-info ml-1", onclick= `dispatch(\"/houses/delete/?id=${item._id}\")` ) Delete 
+                script. 
+                  function dispatch(path){ 
+                    window.location.href=path 
+                  } 

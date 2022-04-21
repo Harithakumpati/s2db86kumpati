@@ -15,14 +15,14 @@ block content
   form(id='HouseForm', action= actionid, method="PUT")
     div.form-group
       label.houseAttr(for='house_name') House name
-      input#house_name(type='text' name='house_name', value= house_name )
+      input#house_name(type='text' class='form-control' name='house_name', value= house_name )
     div.form-group
       label.houseAttr(for='house_color') House color
-      input#house_color(type='text' name='house_color', value= house_color )
+      input#house_color(type='text' class='form-control' name='house_color', value= house_color )
     div.form-group
       label.houseAttr(for='house_cost') House cost
-      input#house_cost(type='number' name='house_cost', value= house_cost )
-    input(type="submit" class='btn btn-primary')
+      input#house_cost(type='number' class='form-control' name='house_cost', value= house_cost )
+    input(type="submit" class='btn btn-sm btn-success text-center')
 
   script.
     document.forms['HouseForm'].addEventListener('submit', (event) => {
