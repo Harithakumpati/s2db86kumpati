@@ -2,6 +2,8 @@ extends layout
 block content
   h1= title
 
+  if (toShow == null)
+    h2 No instance to Update
   - let houseid = toShow._id
   - let house_name = toShow.house_name
   - let house_cost = toShow.house_cost
@@ -20,7 +22,7 @@ block content
     div.form-group
       label.houseAttr(for='house_cost') House cost
       input#house_cost(type='number' name='house_cost', value= house_cost )
-    input(type="submit")
+    input(type="submit" class='btn btn-primary')
 
   script.
     document.forms['HouseForm'].addEventListener('submit', (event) => {
