@@ -9,7 +9,7 @@ router.get('/', function(req, res, next) {
 });
 */
 
-/* GET costumes */
+/* GET houses */
 router.get('/', house_controller.house_view_all_Page );
 /* GET detail house page */
 router.get('/detail', house_controller.house_view_one_Page);
