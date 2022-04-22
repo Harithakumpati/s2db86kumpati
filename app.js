@@ -26,7 +26,7 @@ mongoose = require('mongoose');
 mongoose.connect(connectionString,
   { useNewUrlParser: true, useUnifiedTopology: true });
 
-var Costume = require("./models/costume");
+
 var House = require("./models/house");
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -73,32 +73,7 @@ module.exports = app;
 
 // We can seed the collection if needed on server start
 async function recreateDB() {
-  // Delete everything
-  await Costume.deleteMany();
-
-  let instance1 = new Costume({ costume_type: "onebhk", size: 'large', cost: 25.4 });
-  instance1.save(function (err, doc) {
-    if (err) return console.error(err);
-    console.log("First object saved in Costume")
-  });
-
-  let instance2 = new Costume({ costume_type: "twobhk", size: 'small', cost: 16.5 });
-  instance2.save(function (err, doc) {
-    if (err) return console.error(err);
-    console.log("Second object saved in Costume")
-  });
-
-  let instance3 = new Costume({ costume_type: "threebhk", size: 'medium', cost: 32.4 });
-  instance3.save(function (err, doc) {
-    if (err) return console.error(err);
-    console.log("Third object saved in Costume")
-  });
-
-  let instance4 = new Costume({ costume_type: "fourbhk", size: 'extralarge', cost: 43.6 });
-  instance4.save(function (err, doc) {
-    if (err) return console.error(err);
-    console.log("Fourth object saved in Costume")
-  });
+  
 
 // Delete everything in House
   await House.deleteMany();
