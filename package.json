@@ -30,5 +30,6 @@
   "bugs": {
     "url": "https://github.com/Harithakumpati/s2db86kumpati/issues"
   },
-  "homepage": "https://github.com/Harithakumpati/s2db86kumpati#readme"
+  "homepage": "https://github.com/Harithakumpati/s2db86kumpati#readme",
+  "devDependencies": {}
 }

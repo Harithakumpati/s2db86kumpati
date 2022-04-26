@@ -72,6 +72,17 @@ exports.house_update_put = async function (req, res) {
     }
 };
 
+// List of all Houses
+exports.house_list = async function (req, res) {
+    try {
+        theHouse = await House.find();
+        res.send(theHouse);
+    } catch (err) {
+        res.status(500);
+        res.send(`{"error": ${err}}`);
+    }
+};
+
 // VIEWS
 // Handle a show all view
 exports.house_view_all_Page = async function (req, res) {
@@ -86,6 +97,16 @@ exports.house_view_all_Page = async function (req, res) {
 };
 
 // Handle a show one view with id specified by query
+exports.house_detail = async function(req, res) { 
+    console.log("detail"  + req.params.id) 
+    try { 
+        result = await House.findById( req.params.id) 
+        res.send(result) 
+    } catch (error) { 
+        res.status(500) 
+        res.send(`{"error": document for id ${req.params.id} not found`); 
+    } 
+}; 
 exports.house_view_one_Page = async function (req, res) {
     console.log("single view for id " + req.query.id)
     try {
